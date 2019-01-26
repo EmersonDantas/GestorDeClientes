@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang = 'pt-br'>
+<head>
+    <meta charset='utf-8'/>
+    <title>Update Person</title>
+</head>
+<body>
+    <form method="POST" enctype="multpart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
