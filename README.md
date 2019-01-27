@@ -1,4 +1,4 @@
-##Certifique-se de usar todos os comandos abaixo dentro de uma virtual env
+## Certifique-se de usar todos os comandos abaixo dentro de uma virtual env
 **Dependências:**
 
   > pip install -r requisitos.txt
