@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block main %}
+
+<div class="row">
+    <div class="col">
+    </div>
+    <div class="col-6">
+        <h3>Gestor de clientes</h3>
+    </div>
+    <div class="col-sm">
+        {% if user.is_authenticated %}
+            <p>Olá {{user.username}}</p>
+            <a href="{% url 'logout' %}" class="btn btn-info" >Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}" class="btn btn-info" >Login</a>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
+{% block footer %}
+<footer class="footer">
+    <div class="container">
+        <span class="text-muted">Gestor de clientes - 2019 - Aprendendo Django</span>
+    </div>
+</footer>
+{% endblock %}
