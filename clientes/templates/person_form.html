@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang = 'pt-br'>
-<head>
-    <meta charset='utf-8'/>
-    <title>New Person</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block title %} Novo Cliente {% endblock %}
+
+{% block main %}
     <form action="{% url 'person_new' %}" method="POST" enctype="multpart/form-data">
         {% csrf_token %}
-        {{ form }}
-        <button type="submit">Enviar</button>
+        {{ form|bootstrap }}
+        <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
-</body>
-</html>
+{% endblock %}
+

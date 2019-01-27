@@ -1,18 +1,36 @@
-<!DOCTYPE html>
-<html lang='pt-br'>
-<head>
-    <meta charset='utf-8'>
-</head>
-<body>
-<a href="{% url 'logout' %}">Sair</a>
+{% extends 'base.html' %}
 
-    <ul>
-    {% for person in persons %}
-        <li><a href="{% url 'person_update' person.id %}">{{person}} - <a href="{% url 'person_delete' person.id %}">Deletar</a></a></li>
-        
-    {% endfor %}
-    </ul>
+{% block title %} Clientes {% endblock %}
 
-    <a href="{% url 'person_new' %}">Novo</a>
-</body>
-</html>
+{% block main %}
+    <div class="row">
+        <div class="col">
+
+        </div>
+
+        <div class="col-6">
+
+            <ul class="list-group">
+                {% for person in persons %}
+                    <li class="list-group-item"><a href="{% url 'person_update' person.id %}">{{person}} - 
+                        <a href="{% url 'person_delete' person.id %}"><i class="fa fa-trash" aria-hidden="true"></i></a></a></li>
+                    
+                {% endfor %}
+            </ul>
+            
+            <br>
+            
+            <a href="{% url 'person_new' %}" class="btn btn-primary">Novo Cliente</a>
+        </div>
+
+        <div class="col">
+            <p>Logado como: {{user.username}}. </p>
+            <a href="{% url 'logout' %}" class="btn btn-info">Sair</a>
+            
+        </div>
+    </div>
+
+    
+
+    
+{% endblock %}
