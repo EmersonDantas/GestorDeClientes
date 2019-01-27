@@ -4,10 +4,11 @@
 {% block title %} Novo Cliente {% endblock %}
 
 {% block main %}
+    <h3>Novo Cliente</h3>
     <form action="{% url 'person_new' %}" method="POST" enctype="multpart/form-data">
         {% csrf_token %}
         {{ form|bootstrap }}
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>
 {% endblock %}
 

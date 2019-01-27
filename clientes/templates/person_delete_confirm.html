@@ -3,7 +3,7 @@
 {% block title %} Deletar {% endblock %}
 
 {% block main %}
-    <h1>Confirma deletar a pessoa {{person}}?</h1>
+    <h3>Confirma deletar a pessoa {{person}}?</h3>
     <form method="POST" enctype="multpart/form-data">
         {% csrf_token %}
         <button type="submit" class="btn btn-danger">Deletar</button>
